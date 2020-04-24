@@ -1,0 +1,47 @@
+{
+    "name": "@freshheads/javascript-essentials",
+    "version": "1.0.0",
+    "description": "Freshheads javascript essentials",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "build:watch": "tsc --watch",
+        "test": "jest",
+        "test:watch": "jest --watch --config=jest.config.js --detectOpenHandles --silent",
+        "prettier:check": "prettier --check './src/**/*.{ts,md}'",
+        "prettier:write": "prettier --write './src/**/*.{js,ts,json,md}'",
+        "prepare": "npm run build",
+        "typescript:validate": "tsc --noEmit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gnoesiboe/javascript-essentials.git"
+    },
+    "author": "Gijs Nieuwenhuis <gijs.nieuwenhuis@freshheads.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/gnoesiboe/javascript-essentials/issues"
+    },
+    "homepage": "https://github.com/gnoesiboe/javascript-essentials#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.9.5",
+        "@babel/preset-typescript": "^7.9.0",
+        "@types/jest": "^25.2.1",
+        "babel-jest": "^25.4.0",
+        "husky": "^4.2.5",
+        "jest": "^25.4.0",
+        "lint-staged": "^10.1.7",
+        "prettier": "^2.0.5",
+        "typescript": "^3.8.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run test && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,css,md}": [
+            "prettier --write"
+        ]
+    }
+}
