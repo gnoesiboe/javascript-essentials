@@ -70,3 +70,38 @@ const YourApp = () => {
     );
 };
 ```
+
+## Storage
+
+### `localStorage`
+
+Even though `localStorage` has a pretty streightforward browser API, we find ourselves wrapping it in an abstraction a lot. We do this to catch errors that sometimes occur when for instance:
+
+-   the storage is full
+-   the browser security settings don't allow for local storage
+-   the browser support is limited or different
+
+The localStorage abstraction in this library catches errors if wanted and makes it possible for you to log it if the case.
+
+Also it allows for easier retrieval of specific types, like `int` and `boolean`, as by default everything is stored and retrieved as `string`.
+
+Usage:
+
+```javascript
+import {
+    get,
+    write,
+} from '@freshheads/javascript-essentials/storage/localStorage';
+
+// basic usage
+const success = write('key', 2912);
+const value = getInt('key', -1);
+
+// with error logging
+const success = write('key', 2912, true, (error) =>
+    writeErrorToLoggingSystem(error)
+);
+const value = getInt('key', -1, true, (error) =>
+    writeErrorToLoggingSystem(error)
+);
+```
