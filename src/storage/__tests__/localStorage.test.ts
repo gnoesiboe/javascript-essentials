@@ -1,16 +1,7 @@
-import { write, OnErrorHandler, get } from '../localStorage';
+import { write, get } from '../localStorage';
+import { OnErrorHandler } from '../browserStorage';
 
 describe('localStorage', () => {
-    beforeEach(() => {
-        Object.defineProperty(window, 'localStorage', {
-            value: {
-                getItem: jest.fn(() => null),
-                setItem: jest.fn(() => null),
-            },
-            writable: true,
-        });
-    });
-
     describe('write', () => {
         describe('when an error occurs', () => {
             beforeEach(() => {

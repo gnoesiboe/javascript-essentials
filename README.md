@@ -105,3 +105,7 @@ const value = getInt('key', -1, true, (error) =>
     writeErrorToLoggingSystem(error)
 );
 ```
+
+### `sessionStorage`
+
+See `localStorage` above but for `sessionStorage`.
