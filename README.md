@@ -53,7 +53,7 @@ const logger = createNamespacedLogger('security');
 
 const credentials = ['ROLE_USER', 'ROLE_ADMIN'];
 
-// should output [SECURITY] credentials ['ROLE_USER', 'ROLE_ADMIN'] in the console
+// should output [SECURITY] credentials ['ROLE_USER', 'ROLE_ADMIN'] in the consolecreate
 logger.info(credentials, 'credentials', credentials);
 ```
 
@@ -126,3 +126,43 @@ const value = getInt('key', -1, true, (error) =>
 ### `sessionStorage`
 
 See `localStorage` above but for `sessionStorage`.
+
+## Cache
+
+### `createInMemoryCache`
+
+Factory method to create an in memory cache for values of any type. This cache is cleared with every request, and therefor mostly usable in client-side development. It also expires cache after some time, if required.
+
+Usage:
+
+```typescript
+const entriesExpireInSeconds = 60; // 1 minute
+
+const cache = createInMemoryCache<string>(
+    'yourNamespace',
+    entriesExpireInSeconds
+);
+
+// store values in cache
+cache.set('someKey', 'some value');
+
+// retrieve values from cache
+const value = cache.get('someKey');
+
+// if the cache does not contain the value, create a new value and return
+// that, to be able to get and create in one command
+const value = cache.getOrCreate('someKey', async () => {
+    const response = await axios.get('/some-path');
+
+    return response.data.someValue;
+});
+
+// removes a specific key
+cache.remove('someKey');
+
+// clears entire cache within this namespace
+cache.clear();
+
+// counts number of keys in cache
+cache.count();
+```
