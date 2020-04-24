@@ -57,6 +57,32 @@ const credentials = ['ROLE_USER', 'ROLE_ADMIN'];
 logger.info(credentials, 'credentials', credentials);
 ```
 
+### `RestartableTimeout`
+
+A restartable timeout with a clear interface, that allows for callback chaining (and stopping the chain at any time).
+
+Usage:
+
+```typescript
+import RestartableTimeout from '@freshheads/javascript-essentials/utilities/RestartableTimeout';
+
+const timeout = new RestartableTimeout(1000); // 1 second timeout
+
+timeout.addCallback(() => {
+    // do something, executed second
+});
+
+timeout.addCallback((next) => {
+    // do something, executed first
+
+    next(); // calls the previous callback (and can be ommited if required)
+});
+
+timeout.start();
+timeout.restart();
+timeout.stopAndReset();
+```
+
 ## React
 
 ### `ErrorBoundary`
