@@ -40,6 +40,23 @@ const output = replacePlaceholdersInString('{first} + {second} = {outcome}', {
 // returns: '1 + 3 = 4''
 ```
 
+## Logger
+
+### `createNamespacedLogger`
+
+Creates a logger that prefixes every log that is send to it with a specific key. This makes easier to scan for logs in the console. If used with namespace `security` for instance, it logs: `[SECURITY] other stuff you logged`.
+
+Usage:
+
+```javascript
+const logger = createNamespacedLogger('security');
+
+const credentials = ['ROLE_USER', 'ROLE_ADMIN'];
+
+// should output [SECURITY] credentials ['ROLE_USER', 'ROLE_ADMIN'] in the console
+logger.info(credentials, 'credentials', credentials);
+```
+
 ## React
 
 ### `ErrorBoundary`
