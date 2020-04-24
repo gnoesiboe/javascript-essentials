@@ -39,3 +39,34 @@ const output = replacePlaceholdersInString('{first} + {second} = {outcome}', {
 
 // returns: '1 + 3 = 4''
 ```
+
+## React
+
+### `ErrorBoundary`
+
+Re-usable `ErrorBoundary` for React projects. Catches uncaught errors in child components, and displays the fallback component instead. An error listener can also be supplied to use for instance when you want to log the error.
+
+Usage:
+
+```javascript
+import { ErrorBoundary } from '@freshheads/javascript-essentials/react/errorHandling/components/ErrorBoundary';
+
+const YourApp = () => {
+    const onErrorOccurred: OnErrorOccurredHandler = (error, errorInfo) =>
+        pushErrorToSomeCentralLoggingSystem(error, errorInfo);
+
+    return (
+        <ErrorBoundary
+            renderFallback={(error, errorInfo) => (
+                <YourCustomErrorInformationDisplay
+                    error={error}
+                    errorInfo={errorInfo}
+                />
+            )}
+            onErrorOccurred={onErrorOccurred}
+        >
+            <SomeComponentThatMightThrowAnError />
+        </ErrorBoundary>
+    );
+};
+```

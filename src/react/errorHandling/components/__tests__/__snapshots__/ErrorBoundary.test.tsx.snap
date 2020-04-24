@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary when an error is thrown and not caught in a child component should catch it and render the fallback 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Something went wrong
+    </h1>
+    <pre>
+      test
+    </pre>
+    <pre>
+          in ComponentThatThrowsError
+    in ErrorBoundary
+    </pre>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ErrorBoundary when no error is thrown in a child component should render the child components 1`] = `
+<DocumentFragment>
+  <h1>
+    Hello!
+  </h1>
+</DocumentFragment>
+`;
