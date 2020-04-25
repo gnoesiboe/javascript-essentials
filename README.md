@@ -192,3 +192,21 @@ cache.clear();
 // counts number of keys in cache
 cache.count();
 ```
+
+# Todo
+
+-   [Request queue](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/api/request/requestQueue.js)
+-   [Group by callback](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/groupingHelper.js)
+-   [Extract initials + generate full name](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/nameHelper.js)
+-   [Sort array of objects by field in object](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/sortingHelper.js)
+-   [Truncate text on word](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/truncateHelper.js)
+-   [useOnMount hook](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useOnMount.js)
+-   [useScrollToTopOnLocationChange](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnLocationChange.js)
+-   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)
+-   [useStateWithRef](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.js) en https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.ts
+-   [numberFormatter](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
+-   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
+-   [hexToRgbConverter](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/colorUtility.ts)
+-   [Money formatting](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
+-   [Tracking utilities](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/trackingUtilities.ts) (misschien ook HOC oid. `withTrackingOnClick` oid.? Of een hook?)
+-   [Routing: extract path with placeholders](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/routing/utility/urlGenerator.ts#L13)
