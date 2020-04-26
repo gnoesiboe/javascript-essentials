@@ -8,6 +8,7 @@ A library containing javascript utilities that we until now often copy between p
     -   [Array](#array)
         -   [`createRangeArray`](#createrangearray)
         -   [`groupResultsByCallback`](#groupresultsbycallback)
+        -   [`groupObjectArrayByObjectKey`](#groupobjectarraybyobjectkey)
     -   [String](#string-utilities)
         -   [`replacePlaceholdersInString`](#replaceplaceholdersinstring)
         -   [`truncatePreservingWords`](#truncatepreservingwords)
@@ -49,6 +50,8 @@ Takes an array and groups the items in it by looping through it and resolving th
 Usage:
 
 ```typescript
+import { groupResultsByCallback } from '@freshheads/javascript-essentials/utilities/arrayUtilities';
+
 type ItemType = { title: string; type: string };
 
 const items: Array<ItemType> = [
@@ -82,6 +85,55 @@ const result = groupResultsByCallback<ItemType>(items, (item) => item.type);
 //         }
 //     ],
 //     newsArticle: [
+//         {
+//             title: 'Another value',
+//             type: 'newsArticle',
+//         }
+//     ]
+// ]
+```
+
+#### `groupObjectArrayByObjectKey`
+
+Takes an array of objects and sorts it by grouping objects that have the same key value. If the key is not present in one of the items, it is added to the 'other' category.
+
+Usage:
+
+```typescript
+import { groupObjectArrayByObjectKey } from '@freshheads/javascript-essentials/utilities/arrayUtilities';
+
+type ItemType = { title: string; type?: string };
+
+const items: Array<ItemType> = [
+    {
+        title: 'Some title',
+        type: 'blogpost',
+    },
+    {
+        title: 'Other title',
+        type: 'blogpost',
+    },
+    {
+        title: 'Another something',
+    },
+];
+
+const result = groupObjectArrayByObjectKey<ItemType>(items, 'type');
+
+// Output:
+//
+// [
+//     blogpost: [
+//         {
+//              title: 'Some title',
+//              type: 'blogpost',
+//         },
+//         {
+//             title: 'Other title',
+//             type: 'blogpost',
+//         }
+//     ],
+//     other: [
 //         {
 //             title: 'Another value',
 //             type: 'newsArticle',

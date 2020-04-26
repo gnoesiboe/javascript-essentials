@@ -40,3 +40,12 @@ export function groupResultsByCallback<T>(
 
     return grouped;
 }
+
+export function groupObjectArrayByObjectKey<T extends { [key: string]: any }>(
+    items: Array<T>,
+    key: string
+): GroupedResults<T> {
+    return groupResultsByCallback<T>(items, (item: T) => {
+        return item[key] || 'other';
+    });
+}

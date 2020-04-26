@@ -1,4 +1,8 @@
-import { createRangeArray, groupResultsByCallback } from '../arrayUtilities';
+import {
+    createRangeArray,
+    groupResultsByCallback,
+    groupObjectArrayByObjectKey,
+} from '../arrayUtilities';
 
 describe('arrayUtilities', () => {
     describe('createRangeArray', () => {
@@ -59,6 +63,37 @@ describe('arrayUtilities', () => {
             expect(blogposts).toHaveLength(2);
 
             const newsArticles = result.newsArticle;
+            expect(newsArticles).toHaveLength(1);
+        });
+    });
+
+    describe('groupObjectArrayByObjectKey', () => {
+        it('should return the grouped results as expected', () => {
+            type ItemType = { title: string; type?: string };
+
+            const items: Array<ItemType> = [
+                {
+                    title: 'Some title',
+                    type: 'blogpost',
+                },
+                {
+                    title: 'Other title',
+                    type: 'blogpost',
+                },
+                {
+                    title: 'Another value',
+                },
+            ];
+
+            const result = groupObjectArrayByObjectKey<ItemType>(items, 'type');
+
+            expect(Object.keys(result)).toHaveLength(2);
+            expect(Object.keys(result)).toEqual(['blogpost', 'other']);
+
+            const blogposts = result.blogpost;
+            expect(blogposts).toHaveLength(2);
+
+            const newsArticles = result.other;
             expect(newsArticles).toHaveLength(1);
         });
     });
