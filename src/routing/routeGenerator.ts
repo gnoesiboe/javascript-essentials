@@ -1,7 +1,7 @@
 import {
     PlaceholderReplacements,
     replacePlaceholdersInString,
-} from '../../utilities/stringUtilities';
+} from '../utilities/stringUtilities';
 
 /**
  * Takes a route name with placeholders (ie. /blog/post/:id/:slug), and an object with
