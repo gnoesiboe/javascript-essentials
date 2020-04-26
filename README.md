@@ -210,3 +210,4 @@ cache.count();
 -   [Money formatting](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [Tracking utilities](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/trackingUtilities.ts) (misschien ook HOC oid. `withTrackingOnClick` oid.? Of een hook?)
 -   [Routing: extract path with placeholders](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/routing/utility/urlGenerator.ts#L13)
+-   [Group object array preserving order](https://github.com/freshheads/freshheads-data-2.0/blob/develop/assets/frontend/src/js/components/blueprintPeriodResultOverview/utilities/resultSortingUtilities.ts)
