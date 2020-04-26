@@ -7,6 +7,7 @@ A library containing javascript utilities that we until now often copy between p
 -   [Utilities](#Utilities)
     -   [Array](#array)
         -   [`createRangeArray`](#createrangearray)
+        -   [`groupResultsByCallback`](#groupresultsbycallback)
     -   [String](#string-utilities)
         -   [`replacePlaceholdersInString`](#replaceplaceholdersinstring)
         -   [`truncatePreservingWords`](#truncatepreservingwords)
@@ -39,6 +40,54 @@ import { createRangeArray } from '@freshheads/javascript-essentials/utilities/ar
 
 createRangeArray(2, 7); // returns [2, 3, 4, 5, 6, 7]
 createRangeArray(2, 7, 2); // returns [2, 4, 6]
+```
+
+#### `groupResultsByCallback`
+
+Takes an array and groups the items in it by looping through it and resolving the group key for it.
+
+Usage:
+
+```typescript
+type ItemType = { title: string; type: string };
+
+const items: Array<ItemType> = [
+    {
+        title: 'Some title',
+        type: 'blogpost',
+    },
+    {
+        title: 'Other title',
+        type: 'blogpost',
+    },
+    {
+        title: 'Another value',
+        type: 'newsArticle',
+    },
+];
+
+const result = groupResultsByCallback<ItemType>(items, (item) => item.type);
+
+// Output:
+//
+// [
+//     blogpost: [
+//         {
+//              title: 'Some title',
+//              type: 'blogpost',
+//         },
+//         {
+//             title: 'Other title',
+//             type: 'blogpost',
+//         }
+//     ],
+//     newsArticle: [
+//         {
+//             title: 'Another value',
+//             type: 'newsArticle',
+//         }
+//     ]
+// ]
 ```
 
 ### String

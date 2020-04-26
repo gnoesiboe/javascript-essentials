@@ -1,4 +1,4 @@
-import { createRangeArray } from '../arrayUtilities';
+import { createRangeArray, groupResultsByCallback } from '../arrayUtilities';
 
 describe('arrayUtilities', () => {
     describe('createRangeArray', () => {
@@ -25,6 +25,41 @@ describe('arrayUtilities', () => {
                 expect(createRangeArray(2, 6, 2)).toEqual([2, 4, 6]);
                 expect(createRangeArray(2, 7, 2)).toEqual([2, 4, 6]);
             });
+        });
+    });
+
+    describe('groupResultsByCallback', () => {
+        it('should return the grouped results', () => {
+            type ItemType = { title: string; type: string };
+
+            const items: Array<ItemType> = [
+                {
+                    title: 'Some title',
+                    type: 'blogpost',
+                },
+                {
+                    title: 'Other title',
+                    type: 'blogpost',
+                },
+                {
+                    title: 'Another value',
+                    type: 'newsArticle',
+                },
+            ];
+
+            const result = groupResultsByCallback<ItemType>(
+                items,
+                (item) => item.type
+            );
+
+            expect(Object.keys(result)).toHaveLength(2);
+            expect(Object.keys(result)).toEqual(['blogpost', 'newsArticle']);
+
+            const blogposts = result.blogpost;
+            expect(blogposts).toHaveLength(2);
+
+            const newsArticles = result.newsArticle;
+            expect(newsArticles).toHaveLength(1);
         });
     });
 });
