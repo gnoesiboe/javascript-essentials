@@ -54,3 +54,13 @@ export function truncatePreservingWords(
 
     return truncatedValue.trim() + suffix;
 }
+
+export function createFullNameFromParts(
+    firstName: string,
+    preposition: string | null,
+    lastName: string
+): string {
+    return [firstName, preposition, lastName]
+        .filter((part) => !!part)
+        .join(' ');
+}

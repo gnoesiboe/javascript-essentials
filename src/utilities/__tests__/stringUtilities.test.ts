@@ -1,6 +1,7 @@
 import {
     replacePlaceholdersInString,
     truncatePreservingWords,
+    createFullNameFromParts,
 } from '../stringUtilities';
 
 describe('stringUtilities', () => {
@@ -95,6 +96,32 @@ describe('stringUtilities', () => {
                 );
 
                 expect(output).toBe('some short&');
+            });
+        });
+    });
+
+    describe('createFullNameFromParts', () => {
+        describe('with all parts supplied', () => {
+            it('should return the expected output', () => {
+                const fullName = createFullNameFromParts(
+                    'Peter',
+                    'van der',
+                    'Sanden'
+                );
+
+                expect(fullName).toBe('Peter van der Sanden');
+            });
+        });
+
+        describe('with only first and last name supplied', () => {
+            it('should return the expected output', () => {
+                const fullName = createFullNameFromParts(
+                    'Peter',
+                    null,
+                    'Jansen'
+                );
+
+                expect(fullName).toBe('Peter Jansen');
             });
         });
     });

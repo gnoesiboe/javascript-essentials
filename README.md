@@ -10,6 +10,7 @@ A library containing javascript utilities that we until now often copy between p
     -   [String](#string-utilities)
         -   [`replacePlaceholdersInString`](#replaceplaceholdersinstring)
         -   [`truncatePreservingWords`](#truncatepreservingwords)
+        -   [`createFullNameFromParts`](#createfullnamefromparts)
     -   [Logger](#logger)
         -   [`createNamespacedLogger`](#createnamespacedlogger)
     -   [`RestartableTimeout`](#restartabletimeout)
@@ -72,6 +73,22 @@ Usage:
 ```typescript
 // output = 'some short…'
 const truncatedString = truncatePreservingWords('some short string', 14);
+```
+
+### `createFullNameFromParts`
+
+Takes parts of a name and creates a full name out of it.
+
+Usage:
+
+```typescript
+import { createFullNameFromParts } from '@freshheads/javascript-essentials/utilities/stringUtilities';
+
+// Output: 'Peter van der Sanden'
+createFullNameFromParts('Peter', 'van der', 'Sanden');
+
+// Output: 'Peter Jansen'
+createFullNameFromParts('Peter', null, 'Jansen');
 ```
 
 ### Logger
