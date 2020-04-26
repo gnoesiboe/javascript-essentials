@@ -402,7 +402,6 @@ cache.count();
 
 # Todo
 
--   [Sort array of objects by field in object](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/sortingHelper.js)
 -   [useScrollToTopOnLocationChange](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnLocationChange.js)
 -   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)
 -   [useStateWithRef](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.js) en https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.ts
