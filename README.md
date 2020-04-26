@@ -20,6 +20,8 @@ A library containing javascript utilities that we until now often copy between p
 -   [React](#react)
     -   [Components](#components)
         -   [`ErrorBoundary`](#errorboundary)
+    -   [Hooks](#hooks)
+        -   [`useStateWithRef`](#usestatewithref)
 -   [Storage](#storage)
     -   [`localStorage`](#localstorage)
     -   [`sessionStorage`](#sessionstorage)
@@ -303,6 +305,23 @@ const YourApp = () => {
 };
 ```
 
+### Hooks
+
+#### `useStateWithRef`
+
+Useful as an fix for [stale callbacks](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function). It's a hook that syncs a state and a ref internally, so that we are always able to access the latest version of a state through the ref, but still have the state to cause re-render as expected.
+
+Usage:
+
+```typescript
+import useStateWithRef from '@freshheads/javascript-essentials/react/hooks/useStateWithRef';
+
+const myComponent: Reat.FC = () => {
+    // Can be used pretty much like `getState()` except `getState` is a function
+    const { getState, setState } = useStateWithRef<number>(0);
+};
+```
+
 ## Routing
 
 ### `createPathFromRoute`
@@ -404,7 +423,6 @@ cache.count();
 
 -   [useScrollToTopOnLocationChange](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnLocationChange.js)
 -   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)
--   [useStateWithRef](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.js) en https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/hooks/useStateWithRef.ts
 -   [numberFormatter](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
 -   [hexToRgbConverter](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/colorUtility.ts)
