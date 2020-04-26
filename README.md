@@ -421,7 +421,6 @@ cache.count();
 
 # Todo
 
--   [useScrollToTopOnLocationChange](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnLocationChange.js)
 -   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)
 -   [numberFormatter](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
