@@ -2,9 +2,32 @@
 
 A library containing javascript utilities that we until now often copy between projects and want to be make easier accessible.
 
-## Array utilities
+## TOC
 
-### `createRangeArray`
+-   [Utilities](#Utilities)
+    -   [Array](#array)
+        -   [`createRangeArray`](#createrangearray)
+    -   [String](#string-utilities)
+        -   [`replacePlaceholdersInString`](#replaceplaceholdersinstring)
+        -   [`truncatePreservingWords`](#truncatepreservingwords)
+    -   [Logger](#logger)
+        -   [`createNamespacedLogger`](#createnamespacedlogger)
+    -   [`RestartableTimeout`](#restartabletimeout)
+    -   [`PromiseQueue`](#promisequeue)
+-   [React](#react)
+    -   [ErrorHandling](#error-handling)
+        -   [`ErrorBoundary`](#errorboundary)
+-   [Storage](#storage)
+    -   [`localStorage`](#localstorage)
+    -   [`sessionStorage`](#sessionstorage)
+-   [Cache](#cache)
+    -   [`createInMemoryCache`](#createinmemorycache)
+
+## Utilities
+
+### Array
+
+#### `createRangeArray`
 
 Can be used to create an array with a range of numbers in it from the supplied `from` to the `until` value. Optionallly a `step` parameter can be supplied to control the steps taken between the `from` and `until` when generating the range.
 
@@ -17,9 +40,9 @@ createRangeArray(2, 7); // returns [2, 3, 4, 5, 6, 7]
 createRangeArray(2, 7, 2); // returns [2, 4, 6]
 ```
 
-## String utilities
+### String
 
-### `replacePlaceholdersInString`
+#### `replacePlaceholdersInString`
 
 Takes a string with placeholders and it's replacements and returns a new string with the placeholders replaced. Placeholder replacements can be string, numbers or callback functions returning a string or a number.
 
@@ -51,9 +74,9 @@ Usage:
 const truncatedString = truncatePreservingWords('some short string', 14);
 ```
 
-## Logger
+### Logger
 
-### `createNamespacedLogger`
+#### `createNamespacedLogger`
 
 Creates a logger that prefixes every log that is send to it with a specific key. This makes easier to scan for logs in the console. If used with namespace `security` for instance, it logs: `[SECURITY] other stuff you logged`.
 
@@ -131,7 +154,9 @@ queue.started; // returns true if started
 
 ## React
 
-### `ErrorBoundary`
+### Error handling
+
+#### `ErrorBoundary`
 
 Re-usable `ErrorBoundary` for React projects. Catches uncaught errors in child components, and displays the fallback component instead. An error listener can also be supplied to use for instance when you want to log the error.
 
@@ -176,7 +201,7 @@ Also it allows for easier retrieval of specific types, like `int` and `boolean`,
 
 Usage:
 
-```javascript
+```typescript
 import {
     get,
     write,
