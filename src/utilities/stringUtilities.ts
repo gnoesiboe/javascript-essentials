@@ -27,3 +27,30 @@ export function replacePlaceholdersInString(
 
     return output;
 }
+
+export function truncatePreservingWords(
+    value: string,
+    maxLength: number,
+    suffix: string = '…'
+) {
+    if (value.length < maxLength) {
+        return value;
+    }
+
+    const maxContentLength = maxLength - suffix.length;
+    const individualWords = value.split(/[\s]+/);
+
+    let truncatedValue: string = '';
+
+    for (let i = 0, l = individualWords.length; i < l; i++) {
+        const truncatedValueWithNextWord = `${truncatedValue} ${individualWords[i]}`;
+
+        if (truncatedValueWithNextWord.length <= maxContentLength) {
+            truncatedValue = truncatedValueWithNextWord;
+        } else {
+            break;
+        }
+    }
+
+    return truncatedValue.trim() + suffix;
+}

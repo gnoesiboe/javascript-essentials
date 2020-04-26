@@ -40,6 +40,17 @@ const output = replacePlaceholdersInString('{first} + {second} = {outcome}', {
 // returns: '1 + 3 = 4''
 ```
 
+### `truncatePreservingWords`
+
+Truncates a string, but makes sure that individual words are not cut-off somewhere in the middle.
+
+Usage:
+
+```typescript
+// output = 'some short…'
+const truncatedString = truncatePreservingWords('some short string', 14);
+```
+
 ## Logger
 
 ### `createNamespacedLogger`
@@ -233,7 +244,6 @@ cache.count();
 -   [Group by callback](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/groupingHelper.js)
 -   [Extract initials + generate full name](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/nameHelper.js)
 -   [Sort array of objects by field in object](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/sortingHelper.js)
--   [Truncate text on word](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/truncateHelper.js)
 -   [useOnMount hook](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useOnMount.js)
 -   [useScrollToTopOnLocationChange](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnLocationChange.js)
 -   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)

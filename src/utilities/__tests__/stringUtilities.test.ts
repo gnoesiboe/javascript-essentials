@@ -1,4 +1,7 @@
-import { replacePlaceholdersInString } from '../stringUtilities';
+import {
+    replacePlaceholdersInString,
+    truncatePreservingWords,
+} from '../stringUtilities';
 
 describe('stringUtilities', () => {
     describe('replacePlaceholdersInString', () => {
@@ -55,6 +58,43 @@ describe('stringUtilities', () => {
                 );
 
                 expect(output).toBe('1 + 3 = 4');
+            });
+        });
+    });
+
+    describe('truncatePreservingWords', () => {
+        describe('When providing a string that is shorter than the max length', () => {
+            it('should return the string as it is passed in', () => {
+                const input = 'some short string';
+
+                const output = truncatePreservingWords(input, 100);
+
+                expect(output).toBe(input);
+            });
+        });
+
+        describe('When providing a string that is longer than the max length', () => {
+            it('should truncate the string preserving words', () => {
+                const maxLength = 14;
+                const output = truncatePreservingWords(
+                    'some short string',
+                    maxLength
+                );
+
+                expect(output).toBe('some short…');
+                expect(output.length).toBeLessThan(maxLength);
+            });
+        });
+
+        describe('When requiring another suffix than the default', () => {
+            it('should apply it', () => {
+                const output = truncatePreservingWords(
+                    'some short string',
+                    14,
+                    '&'
+                );
+
+                expect(output).toBe('some short&');
             });
         });
     });
