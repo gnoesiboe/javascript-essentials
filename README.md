@@ -15,7 +15,7 @@ A library containing javascript utilities that we until now often copy between p
     -   [`RestartableTimeout`](#restartabletimeout)
     -   [`PromiseQueue`](#promisequeue)
 -   [React](#react)
-    -   [ErrorHandling](#error-handling)
+    -   [Components](#components)
         -   [`ErrorBoundary`](#errorboundary)
 -   [Storage](#storage)
     -   [`localStorage`](#localstorage)
@@ -154,7 +154,7 @@ queue.started; // returns true if started
 
 ## React
 
-### Error handling
+### Components
 
 #### `ErrorBoundary`
 
@@ -163,7 +163,7 @@ Re-usable `ErrorBoundary` for React projects. Catches uncaught errors in child c
 Usage:
 
 ```javascript
-import { ErrorBoundary } from '@freshheads/javascript-essentials/react/errorHandling/components/ErrorBoundary';
+import { ErrorBoundary } from '@freshheads/javascript-essentials/react/components/ErrorBoundary';
 
 const YourApp = () => {
     const onErrorOccurred: OnErrorOccurredHandler = (error, errorInfo) =>
