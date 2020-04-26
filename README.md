@@ -79,8 +79,43 @@ timeout.addCallback((next) => {
 });
 
 timeout.start();
-timeout.restart();
+timeout.restart();()
 timeout.stopAndReset();
+```
+
+### PromiseQueue
+
+Sometimes promises need to be executed one after another. For instance when you want a set of API requests to be executed one after another, to ensure that the order of the responses is not dependent on the response times of the requested API's endpoints.
+
+Usage:
+
+```typescript
+import RequestQueue from '@freshheads/javascript-essentials/utilities/PromiseQueue';
+
+const queue = new PromiseQueue();
+
+queue
+    .add<ResponseType>(() => { // execute some ajax request })
+    .then((response) => {
+        // handle response from the API
+    })
+    .catch(error => {
+        // handle any error
+    });
+
+queue
+    .add<SecondResponseType>(() => { // execute some ajax request })
+    .then((response) => {
+        // handle response from the API
+    })
+    .catch(error => {
+        // handle any error
+    });
+
+// further utility functions:
+queue.length; // returns the current length of the queue
+queue.started; // returns true if started
+
 ```
 
 ## React
@@ -195,7 +230,6 @@ cache.count();
 
 # Todo
 
--   [Request queue](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/api/request/requestQueue.js)
 -   [Group by callback](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/groupingHelper.js)
 -   [Extract initials + generate full name](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/nameHelper.js)
 -   [Sort array of objects by field in object](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/helper/sortingHelper.js)

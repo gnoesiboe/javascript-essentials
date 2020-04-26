@@ -1,5 +1,3 @@
-// @flow
-
 export type CallbackFunction = (next: CallbackFunction | null) => void;
 
 export default class RestartableTimeout {

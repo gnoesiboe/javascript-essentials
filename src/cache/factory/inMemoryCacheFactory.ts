@@ -1,5 +1,3 @@
-// @flow
-
 type CacheEntryType = {
     value: any;
     timeoutHandle: number | null;
