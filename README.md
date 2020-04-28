@@ -322,6 +322,20 @@ const myComponent: Reat.FC = () => {
 };
 ```
 
+#### `useScrollToTopOnDependencyChange`
+
+Scrolls to top when one of the supplied dependencies changes. Can be used for instance in combination with location. If no arguments are supplied, the hook only scrolls to top on mount.
+
+Usage:
+
+```typescript
+import useStateWithRef from '@freshheads/javascript-essentials/react/hooks/useScrollToTopOnDependencyChange';
+
+const location = useLocation(); // react-router-dom
+
+useScrollToTopOnDependencyChange(location.pathname, location.search);
+```
+
 ## Routing
 
 ### `createPathFromRoute`
@@ -421,7 +435,6 @@ cache.count();
 
 # Todo
 
--   [useScrollToTopOnMount](https://github.com/freshheads/ggz-zorgstandaarden/blob/develop/assets/frontend/src/js/hooks/useScrollToTopOnMount.js)
 -   [numberFormatter](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
 -   [hexToRgbConverter](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/colorUtility.ts)
