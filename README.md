@@ -450,7 +450,6 @@ cache.count();
 
 # Todo
 
--   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
 -   [hexToRgbConverter](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/colorUtility.ts)
 -   [Money formatting](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [Tracking utilities](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/trackingUtilities.ts) (misschien ook HOC oid. `withTrackingOnClick` oid.? Of een hook?)
