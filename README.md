@@ -169,7 +169,7 @@ const output = replacePlaceholdersInString('{first} + {second} = {outcome}', {
 // returns: '1 + 3 = 4''
 ```
 
-### `truncatePreservingWords`
+#### `truncatePreservingWords`
 
 Truncates a string, but makes sure that individual words are not cut-off somewhere in the middle.
 
@@ -180,7 +180,7 @@ Usage:
 const truncatedString = truncatePreservingWords('some short string', 14);
 ```
 
-### `createFullNameFromParts`
+#### `createFullNameFromParts`
 
 Takes parts of a name and creates a full name out of it.
 
