@@ -22,6 +22,7 @@ A library containing javascript utilities that we until now often copy between p
         -   [`ErrorBoundary`](#errorboundary)
     -   [Hooks](#hooks)
         -   [`useStateWithRef`](#usestatewithref)
+        -   [`useScrollToTopOnDependencyChange`](#usescrolltotopondependencychange)
 -   [Storage](#storage)
     -   [`localStorage`](#localstorage)
     -   [`sessionStorage`](#sessionstorage)
