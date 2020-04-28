@@ -435,7 +435,6 @@ cache.count();
 
 # Todo
 
--   [numberFormatter](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
 -   [textUtilities](https://github.com/freshheads/human-rights-tattoo/blob/develop/assets/frontend/src/js/utility/textUtilities.ts) en https://github.com/freshheads/logistic-force-frontend/blob/develop/utilities/textUtilities.ts
 -   [hexToRgbConverter](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/colorUtility.ts)
 -   [Money formatting](https://github.com/freshheads/013/blob/develop/assets/frontend/src/js/utility/numberUtilities.ts)
