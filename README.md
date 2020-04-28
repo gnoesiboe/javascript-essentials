@@ -13,6 +13,7 @@ A library containing javascript utilities that we until now often copy between p
         -   [`replacePlaceholdersInString`](#replaceplaceholdersinstring)
         -   [`truncatePreservingWords`](#truncatepreservingwords)
         -   [`createFullNameFromParts`](#createfullnamefromparts)
+        -   [`removeLineBreaks`](#removelinebreaks)
     -   [Logger](#logger)
         -   [`createNamespacedLogger`](#createnamespacedlogger)
     -   [`RestartableTimeout`](#restartabletimeout)
@@ -193,6 +194,19 @@ createFullNameFromParts('Peter', 'van der', 'Sanden');
 
 // Output: 'Peter Jansen'
 createFullNameFromParts('Peter', null, 'Jansen');
+```
+
+#### `removeLineBreaks`
+
+Removes line breaks from a string and replaces them with something else.
+
+Usage:
+
+```typescript
+import { removeLineBreaks } from '@freshheads/javascript-essentials/utilities/stringUtilities';
+
+// Output: 'Eerste regel. Tweede regel'
+removeLineBreaks('Eerste regel\\r\\nTweede regel', '. ');
 ```
 
 ### Logger

@@ -64,3 +64,10 @@ export function createFullNameFromParts(
         .filter((part) => !!part)
         .join(' ');
 }
+
+export function removeLineBreaks(
+    value: string,
+    replaceWith: string = ' '
+): string {
+    return value.replace(/\r?\n|\r/g, replaceWith);
+}

@@ -2,6 +2,7 @@ import {
     replacePlaceholdersInString,
     truncatePreservingWords,
     createFullNameFromParts,
+    removeLineBreaks,
 } from '../stringUtilities';
 
 describe('stringUtilities', () => {
@@ -122,6 +123,43 @@ describe('stringUtilities', () => {
                 );
 
                 expect(fullName).toBe('Peter Jansen');
+            });
+        });
+    });
+
+    describe('removeLineBreaks', () => {
+        describe('when an empty string is supplied', () => {
+            it('should return the empty string', () => {
+                const result = removeLineBreaks('');
+
+                expect(result).toBe('');
+            });
+        });
+
+        describe('when a string is supplied with \\r\\n line breaks', () => {
+            it('should remove it', () => {
+                const result = removeLineBreaks(`Eerste regel\r\nTweede regel`);
+
+                expect(result).toBe('Eerste regel Tweede regel');
+            });
+        });
+
+        describe('when a string is supplied with \\n line breaks', () => {
+            it('should remove it', () => {
+                const result = removeLineBreaks(`Eerste regel\nTweede regel`);
+
+                expect(result).toBe('Eerste regel Tweede regel');
+            });
+        });
+
+        describe('when another replaceWith is supplied', () => {
+            it('should use that as seperator', () => {
+                const result = removeLineBreaks(
+                    `Eerste regel\nTweede regel`,
+                    '. '
+                );
+
+                expect(result).toBe('Eerste regel. Tweede regel');
             });
         });
     });
